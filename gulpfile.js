@@ -1,11 +1,10 @@
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const htmlmin = require('gulp-htmlmin');
 const cssmin = require('gulp-cssmin');
 const uglify = require('gulp-uglify');
-const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const jsImport = require('gulp-js-import');
 const sourcemaps = require('gulp-sourcemaps');
@@ -25,7 +24,9 @@ const htmlFile = [
 function html() {
   return gulp.src(htmlFile)
     .pipe(htmlPartial({
-      basePath: 'src/assets/partials/'
+      basePath: 'src/assets/partials/',
+      tagName: 'partial',
+      variablePrefix: '@@' // broken feature
     }))
     .pipe(htmlbeautify())
     .pipe(gulpIf(isProd, htmlmin({
@@ -35,7 +36,7 @@ function html() {
 }
 
 function css() {
-  return gulp.src('src/assets/sass/style.scss')
+  return gulp.src('src/assets/sass/terminal.scss')
     .pipe(gulpIf(!isProd, sourcemaps.init()))
     .pipe(sass({
       includePaths: ['node_modules']
@@ -58,12 +59,6 @@ function js() {
     // .pipe(concat('all.js'))
     .pipe(gulpIf(isProd, uglify()))
     .pipe(gulp.dest('public/assets/js'));
-}
-
-function img() {
-  return gulp.src('src/assets/img/*')
-    .pipe(gulpIf(isProd, imagemin()))
-    .pipe(gulp.dest('public/assets/img/'));
 }
 
 function fonts() {
@@ -95,7 +90,6 @@ function watchFiles() {
   gulp.watch('src/**/*.html', gulp.series(html, browserSyncReload));
   gulp.watch('src/assets/**/*.scss', gulp.series(css, browserSyncReload));
   gulp.watch('src/assets/**/*.js', gulp.series(js, browserSyncReload));
-  gulp.watch('src/assets/img/**/*.*', gulp.series(img));
   gulp.watch('src/assets/**/*.{eot,svg,ttf,woff,woff2}', gulp.series(fonts));
   gulp.watch('src/assets/vendor/**/*.*', gulp.series(fontAwesome));
 
@@ -113,5 +107,5 @@ exports.js = js;
 exports.fonts = fonts;
 exports.fontAwesome = fontAwesome;
 exports.del = del;
-exports.serve = gulp.parallel(html, css, js, img, fonts, fontAwesome, watchFiles, serve);
-exports.default = gulp.series(del, html, css, js, fonts, img, fontAwesome);
+exports.serve = gulp.parallel(html, css, js, fonts, fontAwesome, watchFiles, serve);
+exports.default = gulp.series(del, html, css, js, fonts, fontAwesome);
