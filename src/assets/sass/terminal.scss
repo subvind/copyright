@@ -293,7 +293,7 @@ nav ul > li::after {
 }
 
 ol li::before {
-  content: counters(item, ".") ". ";
+  content: counters(item, ".") " -> ";
   counter-increment: item;
 }
 
@@ -386,6 +386,10 @@ ol.terminal-toc li a {
 .terminal-menu li a:hover {
   background: none;
   color: inherit;
+}
+
+ol.upper-alpha {
+  list-style-type: upper-alpha;
 }
 
 ol.terminal-toc li::before {
