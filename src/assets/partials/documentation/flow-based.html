@@ -22,7 +22,56 @@ The gotcha here is that the car is moving at speed and everyone needs to plan th
     a packet of text that bridges the gap between abstract things and physical concepts; it has a meaning and that meaning has a usage. 
   </div>
 </div>
-<br />
+<table>
+  <caption>
+    connectives
+  </caption>
+  <thead>
+    <tr>
+      <th>symbol</th>
+      <th>translation</th>
+      <th>definition</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th colspan="4">propositional logic: a formal system of symbolic logic that deals with proposition and their logical relationships and is the foundation for reasoning and evaluating arguements.</th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <th>&#62;&#62;</th>
+      <td>if then</td>
+      <td>material implication</td>
+    </tr>
+    <tr>
+      <th>&#60;&#62;</th>
+      <td>if and only if</td>
+      <td>biconditional</td>
+    </tr>
+    <tr>
+      <th>\\</th>
+      <td>and</td>
+      <td>conjuction</td>
+    </tr>
+    <tr>
+      <th>||</th>
+      <td>or</td>
+      <td>disjuction</td>
+    </tr>
+    <tr>
+      <th>//</th>
+      <td>not</td>
+      <td>negation</td>
+    </tr>
+    <tr>
+      <th>--</th>
+      <td>xor</td>
+      <td>exclusive or</td>
+    </tr>
+  </tbody>
+</table>
+
 For a pragmatic demonstration lets say that at the end of every word is a road network intersection or (space) where a turn can be made and between each letter is an address or (character) where another turn can be made.
 Now, if we are moving at speed which of the following options is the most correct.
 <ol class="upper-alpha">
@@ -59,51 +108,201 @@ However before we start defining our flow-based scripting language we are going 
 </div>
 <br />
 Starting with some tables we are going to cover working with clay or (interpreting), firing clay or (compiling), and clay use cases or (runtime).
-We are going to cover all 6 root causes to an incident investigation. 
+We are going to cover all 6 investigation occurances then conclude in summory our 1 inom constant which represents orthagnal relationship. 
 
 <table>
   <caption>
-    network intersection
+    intersections -- anchors
   </caption>
   <thead>
     <tr>
-      <th>###</th>
-      <th>??? -> !!!</th>
-      <th>\|/</th>
+      <th>abstract</th>
+      <th>material</th>
+      <th>meaning</th>
+      <th>usage</th>
     </tr>
   </thead>
   <tfoot>
     <tr>
-      <th colspan="4">syntax ### blueprint -> module \|/ type</th>
+      <th colspan="4">
+        finite state machine: a mathematical model used to describe and represent systems that exhibit a finite number of states and transition between those states based on certain inputs or events.
+      </th>
     </tr>
   </tfoot>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>... -> auto</td>
+      <th>...</th>
+      <td>enum</td>
+      <td>auto</td>
       <td>traffic</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>::: -> void</td>
+      <th>:::</th>
+      <td>flashing</td>
+      <td>void</td>
       <td>traffic</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>\\\ -> halt</td>
+      <th>\\\</th>
+      <td>yellow</td>
+      <td>halt</td>
       <td>signal</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>||| -> stop</td>
+      <th>|||</th>
+      <td>red</td>
+      <td>stop</td>
       <td>signal</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>/// -> go</td>
+      <th>///</th>
+      <td>green</td>
+      <td>go</td>
       <td>signal</td>
     </tr>
   </tbody>
 </table>
-<br />
+<table>
+  <caption>
+    orthagonals -- edges
+  </caption>
+  <thead>
+    <tr>
+      <th>token</th>
+      <th>incident</th>
+      <th>occurance</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        component: a self-contained module that performs a specific task or operation. It can be a function, a subroutine, a class, or any other encapsulated unit of code that takes input, performs some processing, and produces output.
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>how</td>
+      <td>state</td>
+    </tr>
+    <tr>
+      <th>,</th>
+      <td>when</td>
+      <td>addition</td>
+    </tr>
+    <tr>
+      <th>;</th>
+      <td>where</td>
+      <td>tangent</td>
+    </tr>
+    <tr>
+      <th>:</th>
+      <td>what</td>
+      <td>define</td>
+    </tr>
+    <tr>
+      <th>-</th>
+      <td>who</td>
+      <td>link</td>
+    </tr>
+    <tr>
+      <th>^</th>
+      <td>why</td>
+      <td>point</td>
+    </tr>
+    <tr>
+      <th>=</th>
+      <td>equal</td>
+      <td>osmosis</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <caption>
+    controls -- nodes
+  </caption>
+  <thead>
+    <tr>
+      <th>method</th>
+      <th>begin</th>
+      <th>inject</th>
+      <th>end</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        finite state machine: a mathematical model used to describe and represent systems that exhibit a finite number of states and transition between those states based on certain inputs or events.
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <th>state</th>
+      <td>__</td>
+      <td>hello world</td>
+      <td>hello world</td>
+    </tr>
+    <tr>
+      <th>wrap if</th>
+      <td>__ (\|/ &#62;&#62; now)</td>
+      <td>not \|/</td>
+      <td>not now</td>
+    </tr>
+    <tr>
+      <th>wrap iif</th>
+      <td>__ (\|/ &#60;&#62; now)</td>
+      <td>not \|/</td>
+      <td>not \|/</td>
+    </tr>
+    <tr>
+      <th>wrap time</th>
+      <td>__ (/ >> hour ~ \ >> min ~ | >> sec)</td>
+      <td>1000 \</td>
+      <td>1000 min</td>
+    </tr>
+    <tr>
+      <th>boolean wrap</th>
+      <td>(1 >> true ~ 0 >> false) __</td>
+      <td>1 cat</td>
+      <td>true cat</td>
+    </tr>
+    <tr>
+      <th>encapsulate</th>
+      <td>(__) ___ (__)</td>
+      <td>div ~ example</td>
+      <td>div example div</td>
+    </tr>
+    <tr>
+      <th>nusentence</th>
+      <td>(...__.)</td>
+      <td>hello world</td>
+      <td>Hello world.</td>
+    </tr>
+    <tr>
+      <th>define</th>
+      <td>__: ___</td>
+      <td>key ~ value</td>
+      <td>key: value</td>
+    </tr>
+    <tr>
+      <th>enum</th>
+      <td>__: \, ___, and /</td>
+      <td>now ~ present</td>
+      <td>now: past present future</td>
+    </tr>
+    <tr>
+      <th>unsentence</th>
+      <td>...__.</td>
+      <td>Hello world.</td>
+      <td>hello world</td>
+    </tr>
+  </tbody>
+</table>
+
 Here is another thought experiment about prefixes and suffixes. Consider your first and last name for a second and ask yourself why existental comes before universal.
+
+
+
