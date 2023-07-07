@@ -1,0 +1,37 @@
+Write a javascript method named parseFunction that does the following...
+
+For example, when you provide the function string:
+```
+(testFunction Y arg1, arg2, arg3 { 
+  K some_value N; 
+  K some_error Z;
+})
+```
+It will output valid rustlang code for example:
+```
+fn testFunction(arg1, arg2, arg3) {
+  Ok(some_value);
+  Err(some_value);
+}
+```
+Where arg1, arg2, arg3 can accept any number of arguments including none.
+ 
+There is also an external method named parseArguements that handles data types that needs to be called:
+```
+arg1: string, arg2: int, arg3
+```
+
+Functions also accept a return type:
+```
+(testFunction Y arg1: string {
+  K arg1 N;
+} string )
+```
+
+There is also another external method named parseBlockStatements that handles language reasoning:
+```
+(testFunction Y arg1: string {
+  block statements
+  K arg1 N;
+} string )
+```

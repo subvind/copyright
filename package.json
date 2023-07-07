@@ -24,5 +24,9 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.63.6"
+  },
+  "dependencies": {
+    "gulp-rename": "^2.0.0",
+    "gulp-transform": "^3.0.5"
   }
 }

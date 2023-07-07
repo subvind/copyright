@@ -1,0 +1,10 @@
+
+H number: float = 3.14 I
+H variable: float = number IU
+H zero: integer = number IU
+H one: integer = 1 S
+H demo: string = hello world S
+H fact: boolean = true I
+H fiction: boolean = false S
+H false: array = [1, 2, 3] S
+H false: array[integer] = false S

@@ -1,0 +1,49 @@
+Write a javascript method named parseBlockStatement that does the following...
+
+It cloud be the following assignment:
+```
+H number: float = 3.14 IU
+
+(testFunction { blockStatements } string )
+
+(testFunction Y arg1: string { blockStatements } string )
+
+(testFunction Y arguments {
+  $$ blockStatements
+})
+
+(testFunction Y arguments {
+  $$ blockStatements
+} returnType )
+
+$$ a hidden note for coders only
+
+// console.log this line of text
+```
+
+It will output valid rustlang code for example:
+```
+let number: f64 = 3.14;
+
+fn testFunction() -> str {
+  Ok("test")
+}
+
+fn testFunction(arg1: str) -> str {
+  Ok(arg1)
+}
+
+fn testFunction(arguments) {
+  // blockStatements
+}
+
+fn testFunction(arguments) -> returnType {
+  // blockStatements
+}
+
+// a hidden note for coders only
+
+!println("text to be logged to the console");
+```
+
+Make sure to be able to parse assignments, functions, comments, and print statements.

@@ -13,6 +13,10 @@ const clean = require('gulp-clean');
 const googleWebFonts = require( 'gulp-google-webfonts' );
 const cssbeautify = require('gulp-cssbeautify');
 const htmlbeautify = require('gulp-html-beautify')
+const fs = require('fs');
+const transform = require('gulp-transform');
+const rename = require('gulp-rename');
+const parser = require('./src/parser/parser.js');
 const isProd = process.env.NODE_ENV === 'prod';
 
 var options = { };
@@ -87,6 +91,7 @@ function browserSyncReload(done) {
 
 
 function watchFiles() {
+  gulp.watch('inomscript/**/*.inom', gulp.series(textParser));
   gulp.watch('src/**/*.html', gulp.series(html, browserSyncReload));
   gulp.watch('src/assets/**/*.scss', gulp.series(css, browserSyncReload));
   gulp.watch('src/assets/**/*.js', gulp.series(js, browserSyncReload));
@@ -101,11 +106,22 @@ function del() {
     .pipe(clean());
 }
 
+function textParser() {
+  return gulp.src('inomscript/**/*.inom')
+    .pipe(transform('utf8', (content) => {
+      const parsedContent = parser(content);
+      
+      return parsedContent
+    }))
+    .pipe(rename({ extname: '.rs' }))
+    .pipe(gulp.dest('machinecode'))
+}
+
 exports.css = css;
 exports.html = html;
 exports.js = js;
 exports.fonts = fonts;
 exports.fontAwesome = fontAwesome;
 exports.del = del;
-exports.serve = gulp.parallel(html, css, js, fonts, fontAwesome, watchFiles, serve);
+exports.serve = gulp.parallel(html, css, js, fonts, fontAwesome, watchFiles, serve, textParser);
 exports.default = gulp.series(del, html, css, js, fonts, fontAwesome);
