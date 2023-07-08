@@ -1,3 +1,5 @@
+const inomlang = require('inomlang').default
+
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const browserSync = require('browser-sync').create();
@@ -16,7 +18,6 @@ const htmlbeautify = require('gulp-html-beautify')
 const fs = require('fs');
 const transform = require('gulp-transform');
 const rename = require('gulp-rename');
-const parser = require('./src/parser/parser.js');
 const isProd = process.env.NODE_ENV === 'prod';
 
 var options = { };
@@ -91,7 +92,7 @@ function browserSyncReload(done) {
 
 
 function watchFiles() {
-  gulp.watch('inomscript/**/*.inom', gulp.series(textParser));
+  gulp.watch('inomlang/**/*.inom', gulp.series(transpiler));
   gulp.watch('src/**/*.html', gulp.series(html, browserSyncReload));
   gulp.watch('src/assets/**/*.scss', gulp.series(css, browserSyncReload));
   gulp.watch('src/assets/**/*.js', gulp.series(js, browserSyncReload));
@@ -106,15 +107,18 @@ function del() {
     .pipe(clean());
 }
 
-function textParser() {
-  return gulp.src('inomscript/**/*.inom')
+function transpiler() {
+  return gulp.src('inomlang/**/*.inom')
     .pipe(transform('utf8', (content) => {
-      const parsedContent = parser(content);
+      console.log('inomlang', inomlang)
+      const parsedContent = inomlang.transpile(content);
       
-      return parsedContent
+      console.log('lexErrors', parsedContent.lexErrors)
+      console.log('parseErrors', parsedContent.parseErrors)
+      return parsedContent.value
     }))
     .pipe(rename({ extname: '.rs' }))
-    .pipe(gulp.dest('machinecode'))
+    .pipe(gulp.dest('machinelang'))
 }
 
 exports.css = css;
@@ -123,5 +127,5 @@ exports.js = js;
 exports.fonts = fonts;
 exports.fontAwesome = fontAwesome;
 exports.del = del;
-exports.serve = gulp.parallel(html, css, js, fonts, fontAwesome, watchFiles, serve, textParser);
+exports.serve = gulp.parallel(html, css, js, fonts, fontAwesome, watchFiles, serve, transpiler);
 exports.default = gulp.series(del, html, css, js, fonts, fontAwesome);

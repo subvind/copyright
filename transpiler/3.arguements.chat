@@ -1,8 +1,0 @@
-Write a javascript method named parseFunctionArguements that does the following...
-
-For example, when you provide the following list of function arguments in a string format:
-```
-arg1: string, arg2: int, arg3: boolean
-```
-
-It will output valid rustlang code.
