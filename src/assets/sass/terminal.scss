@@ -293,12 +293,12 @@ nav ul > li::after {
 }
 
 ol li::before {
-  content: counters(item, ".") " -> ";
+  content: counters(item, "-") "-0 ";
   counter-increment: item;
 }
 
 ol ol li::before {
-  content: counters(item, ".") " ";
+  content: counters(item, "-") " ";
   counter-increment: item;
 }
 

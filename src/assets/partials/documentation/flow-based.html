@@ -89,9 +89,9 @@ Now, if we are moving at speed which of the following options is the most correc
 </div>
 <br />
 Obviously there is no one correct answer because it is a bit of a mix.
-3 -> C is just a reminder to an upcoming event.
-However 1 -> A is wrong because it gets confusing for the driver to hear "turn right" first because they might think it is an emediate turn such as 4 -> D. 
-So 2 -> B is right because it is best to give a location or (noun) first and then the direction or (verb adverb) second for correctness.
+3-0 C is just a reminder to an upcoming event.
+However 1-0 A is wrong because it gets confusing for the driver to hear "turn right" first because they might think it is an emediate turn such as 4-0 D. 
+So 2-0 B is right because it is best to give a location or (noun) first and then the direction or (verb adverb) second for correctness.
 <br />
 <blockquote>
   So that covers how and where but what happens if there is an accident?
@@ -110,6 +110,58 @@ However before we start defining our flow-based scripting language we are going 
 Starting with some tables we are going to cover working with clay or (interpreting), firing clay or (compiling), and clay use cases or (runtime).
 We are going to cover all 6 investigation occurances then conclude in summory our 1 inom constant which represents orthagnal relationship. 
 
+<table>
+  <caption>
+    units -- modules
+  </caption>
+  <thead>
+    <tr>
+      <th>prefix</th>
+      <th>body</th>
+      <th>suffix</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        black box model: a device, system, or object which produces useful information without revealing any information about its internal workings. The explanations for its conclusions remain opaque or “black”
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <th>[name Y mod1, mod2]</th>
+      <td>header &#60;nodes&#62;</td>
+      <td>][</td>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <caption>
+    control -- nodes
+  </caption>
+  <thead>
+    <tr>
+      <th>prefix</th>
+      <th>body</th>
+      <th>suffix</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        component: a self-contained module that performs a specific task or operation. It can be a function, a subroutine, a class, or any other encapsulated unit of code that takes input, performs some processing, and produces output.
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <th>/name Y anc1, anc2/</th>
+      <td>props &#60;process&#62;</td>
+      <td>\ancA\</td>
+    </tr>
+  </tbody>
+</table>
 <table>
   <caption>
     intersections -- anchors
@@ -170,7 +222,7 @@ We are going to cover all 6 investigation occurances then conclude in summory ou
     <tr>
       <th>token</th>
       <th>incident</th>
-      <th>occurance</th>
+      <th>data type</th>
     </tr>
   </thead>
   <tfoot>
@@ -182,119 +234,185 @@ We are going to cover all 6 investigation occurances then conclude in summory ou
   </tfoot>
   <tbody>
     <tr>
-      <th></th>
-      <td>how</td>
-      <td>state</td>
-    </tr>
-    <tr>
-      <th>,</th>
-      <td>when</td>
-      <td>addition</td>
-    </tr>
-    <tr>
-      <th>;</th>
-      <td>where</td>
-      <td>tangent</td>
+      <th>@</th>
+      <td>who</td>
+      <td>member</td>
     </tr>
     <tr>
       <th>:</th>
       <td>what</td>
-      <td>define</td>
+      <td>string</td>
     </tr>
     <tr>
-      <th>-</th>
-      <td>who</td>
-      <td>link</td>
+      <th>#</th>
+      <td>when</td>
+      <td>integer</td>
+    </tr>
+    <tr>
+      <th>!</th>
+      <td>where</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <th>&</th>
+      <td>why</td>
+      <td>comment</td>
+    </tr>
+    <tr>
+      <th>$</th>
+      <td>how</td>
+      <td>character</td>
     </tr>
     <tr>
       <th>^</th>
-      <td>why</td>
-      <td>point</td>
-    </tr>
-    <tr>
-      <th>=</th>
-      <td>equal</td>
-      <td>osmosis</td>
+      <td>json</td>
+      <td>object</td>
     </tr>
   </tbody>
 </table>
-
 <table>
   <caption>
-    controls -- nodes
+    trees -- nodes
   </caption>
   <thead>
     <tr>
-      <th>method</th>
-      <th>begin</th>
-      <th>inject</th>
-      <th>end</th>
+      <th>from</th>
+      <th>to</th>
+      <th>directions</th>
     </tr>
   </thead>
   <tfoot>
     <tr>
       <th colspan="4">
-        finite state machine: a mathematical model used to describe and represent systems that exhibit a finite number of states and transition between those states based on certain inputs or events.
+        filesystem: is the way in which files are named and where they are placed logically for storage and retrieval.
       </th>
     </tr>
   </tfoot>
   <tbody>
     <tr>
-      <th>state</th>
+      <th>3-1-4-1</th>
+      <td>1-0</td>
+      <td>\suv <- subvind.com <- http -- cli/</td>
+    </tr>
+    <tr>
+      <th>1-0</th>
+      <td>2-0</td>
+      <td>\cli -- amqp/</td>
+    </tr>
+    <tr>
+      <th>7-0</th>
+      <td>3-2-1</td>
+      <td>\README.inom -- http -> istrav.com -> car/</td>
+    </tr>
+    <tr>
+      <th>3-2-2</th>
+      <td>3-1-2</td>
+      <td>\truck <- istrav.com -- subvind.com -> truck/</td>
+    </tr>
+  </tbody>
+</table>
+Suppose we had the following file and folder tree structure called a directory and we wanted to navigate from the bottom folder all the way up to the top.
+<ol>
+  <li>&lt;cli&gt;</li>
+  <li>&lt;amqp&gt;</li>
+  <li>&lt;http&gt;
+    <ol>
+      <li>&lt;subvind.com&gt;
+        <ol>
+          <li>&lt;car&gt;</li>
+          <li>&lt;truck&gt;</li>
+          <li>&lt;van&gt;</li>
+          <li>&lt;suv&gt;
+            <ol>
+              <li>\FJV164.inom/</li>
+              <li>\YXQ282.inom/</li>
+              <li>\LON340.inom/</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>&lt;istrav.com&gt;
+        <ol>
+          <li>
+            &lt;car&gt;
+            <ol>
+              <li>\HJQ072.inom/</li>
+              <li>\JEB836.inom/</li>
+              <li>\QXY421.inom/</li>
+            </ol>
+            <li>&lt;truck&gt;</li>
+            <li>&lt;van&gt;</li>
+            <li>&lt;suv&gt;</li>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>&lt;rest&gt;</li>
+  <li>&lt;ui&gt;</li>
+  <li>\automain.inom/</li>
+  <li>\README.inom/</li>
+</ol>
+
+
+<table>
+  <caption>
+    printer
+  </caption>
+  <thead>
+    <tr>
+      <th>begin</th>
+      <th>inject</th>
+      <th>end</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>__</td>
       <td>hello world</td>
       <td>hello world</td>
     </tr>
     <tr>
-      <th>wrap if</th>
       <td>__ (\|/ &#62;&#62; now)</td>
       <td>not \|/</td>
       <td>not now</td>
     </tr>
     <tr>
-      <th>wrap iif</th>
       <td>__ (\|/ &#60;&#62; now)</td>
       <td>not \|/</td>
       <td>not \|/</td>
     </tr>
     <tr>
-      <th>wrap time</th>
       <td>__ (/ >> hour ~ \ >> min ~ | >> sec)</td>
       <td>1000 \</td>
       <td>1000 min</td>
     </tr>
     <tr>
-      <th>boolean wrap</th>
       <td>(1 >> true ~ 0 >> false) __</td>
       <td>1 cat</td>
       <td>true cat</td>
     </tr>
     <tr>
-      <th>encapsulate</th>
       <td>(__) ___ (__)</td>
       <td>div ~ example</td>
       <td>div example div</td>
     </tr>
     <tr>
-      <th>nusentence</th>
       <td>(...__.)</td>
       <td>hello world</td>
       <td>Hello world.</td>
     </tr>
     <tr>
-      <th>define</th>
       <td>__: ___</td>
       <td>key ~ value</td>
       <td>key: value</td>
     </tr>
     <tr>
-      <th>enum</th>
       <td>__: \, ___, and /</td>
       <td>now ~ present</td>
       <td>now: past present future</td>
     </tr>
     <tr>
-      <th>unsentence</th>
       <td>...__.</td>
       <td>Hello world.</td>
       <td>hello world</td>
