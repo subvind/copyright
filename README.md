@@ -11,6 +11,7 @@ part of ecosystem...
 - [www :: top :: subvind/ucimecu](https://github.com/subvind/ucimecu)
 - [server :: backend :: subvind/isisis](https://github.com/subvind/isisis)
 - [client :: frontend :: subvind/autoide](https://github.com/subvind/autoide)
+- [cli :: npm :: subvind/inom](https://github.com/subvind/inom)
 
 some warmup homework...
 - [node.js](https://nodejs.org/en)

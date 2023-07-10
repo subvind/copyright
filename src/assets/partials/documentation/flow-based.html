@@ -107,7 +107,9 @@ However before we start defining our flow-based scripting language we are going 
   </div>
 </div>
 <br />
-Starting with some tables we are going to cover working with clay or (interpreting), firing clay or (compiling), and clay use cases or (runtime).
+Now let's cover working with our transpiled language. To begin we are going to cover tokenizing a string or (lexer), converting tokens to an concrete syntax tree or (parser), visiting the CST or (interpreting), and generating code for production or (building).
+<br />
+<br />
 We are going to cover all 6 investigation occurances then conclude in summory our 1 inom constant which represents orthagnal relationship. 
 
 <table>
@@ -216,13 +218,13 @@ We are going to cover all 6 investigation occurances then conclude in summory ou
 </table>
 <table>
   <caption>
-    orthagonals -- edges
+    interchanges -- edges
   </caption>
   <thead>
     <tr>
       <th>token</th>
       <th>incident</th>
-      <th>data type</th>
+      <th>orthogonal</th>
     </tr>
   </thead>
   <tfoot>
@@ -241,32 +243,32 @@ We are going to cover all 6 investigation occurances then conclude in summory ou
     <tr>
       <th>:</th>
       <td>what</td>
-      <td>string</td>
+      <td>blueprint</td>
     </tr>
     <tr>
       <th>#</th>
       <td>when</td>
-      <td>integer</td>
+      <td>datetime</td>
     </tr>
     <tr>
       <th>!</th>
       <td>where</td>
-      <td>float</td>
+      <td>lat, long</td>
     </tr>
     <tr>
       <th>&</th>
       <td>why</td>
-      <td>comment</td>
+      <td>reason</td>
     </tr>
     <tr>
       <th>$</th>
       <td>how</td>
-      <td>character</td>
+      <td>algorithum</td>
     </tr>
     <tr>
       <th>^</th>
+      <td>data</td>
       <td>json</td>
-      <td>object</td>
     </tr>
   </tbody>
 </table>
