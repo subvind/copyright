@@ -79,6 +79,7 @@ function fontAwesome() {
 
 function serve() {
   browserSync.init({
+    port: 3333,
     open: true,
     notify: false,
     server: './public'
