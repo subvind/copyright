@@ -1037,7 +1037,7 @@ figure > figcaption {
   }
 }
 
-#zoomedIframe {
+.zoomedIframe {
   zoom: 0.667; /* Change the value to the desired zoom level (e.g., 1.5 for 150%, 2 for 200%, etc.) */
   -moz-transform: scale(0.667); /* For Firefox */
   -webkit-transform: scale(0.667); /* For Chrome, Safari, and Opera */
