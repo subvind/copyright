@@ -7,11 +7,11 @@ a devgrammer portfolio in 100% plain old...
 - javascript
 
 part of ecosystem...
-- [fbd :: sync :: subvind/inomlang](https://github.com/subvind/inomlang)
+- [fbd :: sync :: subvind/inamlang](https://github.com/subvind/inamlang)
 - [www :: top :: subvind/ucimecu](https://github.com/subvind/ucimecu)
 - [server :: backend :: subvind/isisis](https://github.com/subvind/isisis)
 - [client :: frontend :: subvind/autoide](https://github.com/subvind/autoide)
-- [cli :: npm :: subvind/inom](https://github.com/subvind/inom)
+- [cli :: npm :: subvind/inam](https://github.com/subvind/inam)
 
 some warmup homework...
 - [node.js](https://nodejs.org/en)

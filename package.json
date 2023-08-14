@@ -28,6 +28,6 @@
   "dependencies": {
     "gulp-rename": "^2.0.0",
     "gulp-transform": "^3.0.5",
-    "inomlang": "^1.1.2"
+    "inamlang": "^1.1.2"
   }
 }

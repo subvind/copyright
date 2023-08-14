@@ -1,4 +1,4 @@
-const inomlang = require('inomlang').default
+const inamlang = require('inamlang').default
 
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
@@ -93,7 +93,7 @@ function browserSyncReload(done) {
 
 
 function watchFiles() {
-  gulp.watch('inomlang/**/*.inom', gulp.series(transpiler));
+  gulp.watch('inamlang/**/*.inam', gulp.series(transpiler));
   gulp.watch('src/**/*.html', gulp.series(html, browserSyncReload));
   gulp.watch('src/assets/**/*.scss', gulp.series(css, browserSyncReload));
   gulp.watch('src/assets/**/*.js', gulp.series(js, browserSyncReload));
@@ -109,10 +109,10 @@ function del() {
 }
 
 function transpiler() {
-  return gulp.src('inomlang/**/*.inom')
+  return gulp.src('inamlang/**/*.inam')
     .pipe(transform('utf8', (content) => {
-      console.log('inomlang', inomlang)
-      const parsedContent = inomlang.transpile(content);
+      console.log('inamlang', inamlang)
+      const parsedContent = inamlang.transpile(content);
       
       console.log('lexErrors', parsedContent.lexErrors)
       console.log('parseErrors', parsedContent.parseErrors)
