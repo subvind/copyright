@@ -43,6 +43,11 @@ body {
   background-color: var(--background-color);
 }
 
+.portfolio {
+  overflow: hidden;
+  position: relative;
+}
+
 h1,
 h2,
 h3,
