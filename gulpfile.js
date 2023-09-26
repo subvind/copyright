@@ -91,6 +91,15 @@ function browserSyncReload(done) {
   done();
 }
 
+function favicons() {
+  return gulp.src('src/favicons/*')
+		.pipe(gulp.dest('public/favicons/'));
+}
+
+function images() {
+  return gulp.src('src/images/**/*')
+		.pipe(gulp.dest('public/images/'));
+}
 
 function watchFiles() {
   gulp.watch('inamlang/**/*.inam', gulp.series(transpiler));
@@ -128,5 +137,5 @@ exports.js = js;
 exports.fonts = fonts;
 exports.fontAwesome = fontAwesome;
 exports.del = del;
-exports.serve = gulp.parallel(html, css, js, fonts, fontAwesome, watchFiles, serve, transpiler);
-exports.default = gulp.series(del, html, css, js, fonts, fontAwesome);
+exports.serve = gulp.parallel(html, css, js, images, favicons, fonts, fontAwesome, watchFiles, serve, transpiler);
+exports.default = gulp.series(del, html, css, js, images, favicons, fonts, fontAwesome);
